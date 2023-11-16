@@ -3,7 +3,11 @@ const app = express();
 const todoRouter = require("./routers/todo");
 const cors = require("cors");
 
-app.use(cors());
+app.use(
+  cors({
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "PATCH"],
+  })
+);
 
 app.use(express.json());
 
