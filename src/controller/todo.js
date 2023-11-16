@@ -22,7 +22,7 @@ function createTask(req, res) {
   const body = req.body;
   const newTask = {
     id: tasks.length + 1,
-    text: body.text,
+    text: "",
     date: new Date(),
     done: false,
     group: "none",

@@ -15,4 +15,12 @@ exports.tasks = [
     group: "none",
     color: "white",
   },
+  {
+    id: 3,
+    text: "Comprar galletas",
+    date: new Date("2022-05-14"),
+    done: true,
+    group: "none",
+    color: "white",
+  },
 ];
