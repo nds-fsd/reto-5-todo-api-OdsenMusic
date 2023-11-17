@@ -45,7 +45,7 @@ function getTask(req, res) {
 function updateTask(req, res) {
   let task = findTask(req);
   if (task) {
-    task.text = req.body.text;
+    task.color = req.body.color;
     res.status(200).json(task);
   } else {
     res.status(404).send();

@@ -5,15 +5,15 @@ exports.tasks = [
     date: new Date("2022-05-21"),
     done: false,
     group: "none",
-    color: "white",
+    color: "yellow",
   },
   {
     id: 2,
     text: "Ir al super",
     date: new Date("2022-05-14"),
-    done: true,
+    done: false,
     group: "none",
-    color: "white",
+    color: "purple",
   },
   {
     id: 3,
@@ -21,6 +21,6 @@ exports.tasks = [
     date: new Date("2022-05-14"),
     done: true,
     group: "none",
-    color: "white",
+    color: "blue",
   },
 ];
