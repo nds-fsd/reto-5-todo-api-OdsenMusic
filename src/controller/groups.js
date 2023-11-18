@@ -45,7 +45,7 @@ function getGroup(req, res) {
 function updateGroup(req, res) {
   let group = findGroup(req);
   if (group) {
-    group.color = req.body.color;
+    Object.assign(group, req.body);
     res.status(200).json(group);
   } else {
     res.status(404).send();
