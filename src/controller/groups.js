@@ -1,4 +1,5 @@
 const { groups } = require("../data/groups");
+const { tasks } = require("../data/index");
 
 function findGroup(req) {
   let id = req.params.id;
@@ -42,10 +43,18 @@ function getGroup(req, res) {
   }
 }
 
+function updateTaskGroupName() {}
+
 function updateGroup(req, res) {
   let group = findGroup(req);
   if (group) {
+    tasks.forEach((task) => {
+      if (task.group === group.name) {
+        task.group = req.body.name;
+      }
+    });
     Object.assign(group, req.body);
+
     res.status(200).json(group);
   } else {
     res.status(404).send();
@@ -54,9 +63,15 @@ function updateGroup(req, res) {
 
 function deleteGroup(req, res) {
   let groupIndex = findGroupIndex(req);
+  let group = findGroup(req);
   if (groupIndex === -1) {
     res.status(404).send();
   } else {
+    tasks.forEach((task) => {
+      if (task.group === group.name) {
+        task.group = "none";
+      }
+    });
     groups.splice(groupIndex, 1);
     res.status(204).send();
   }
