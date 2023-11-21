@@ -19,7 +19,6 @@ function getAllTasks(req, res) {
 }
 
 function createTask(req, res) {
-  const body = req.body;
   const newTask = {
     id: tasks.length + 1,
     text: "",
@@ -27,6 +26,7 @@ function createTask(req, res) {
     done: false,
     group: "none",
     color: "white",
+    deleted: false,
   };
   tasks.push(newTask);
   res.status(201).json(newTask);

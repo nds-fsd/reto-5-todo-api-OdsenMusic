@@ -49,7 +49,7 @@ function updateGroup(req, res) {
   let group = findGroup(req);
   if (group) {
     tasks.forEach((task) => {
-      if (task.group === group.name) {
+      if (task.group === group.name && req.body.name) {
         task.group = req.body.name;
       }
     });
