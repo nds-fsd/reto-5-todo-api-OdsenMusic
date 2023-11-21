@@ -7,11 +7,11 @@ exports.groups = [
   {
     id: 2,
     name: "Vida",
-    color: "green",
+    color: "blue",
   },
   {
     id: 3,
     name: "Trabajo",
-    color: "white",
+    color: "orange",
   },
 ];
