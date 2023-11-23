@@ -20,7 +20,7 @@ function getAllTasks(req, res) {
 
 function createTask(req, res) {
   const newTask = {
-    id: tasks.length + 1,
+    id: Date.now(),
     text: "",
     date: new Date(),
     done: false,

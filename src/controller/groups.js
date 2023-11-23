@@ -22,11 +22,8 @@ function getAllGroups(req, res) {
 function createGroup(req, res) {
   const body = req.body;
   const newGroup = {
-    id: groups.length + 1,
-    text: "",
-    date: new Date(),
-    done: false,
-    group: "none",
+    id: Date.now(),
+    name: "Nuevo grupo",
     color: "white",
   };
   groups.push(newGroup);
