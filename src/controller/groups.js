@@ -23,7 +23,9 @@ function createGroup(req, res) {
   const body = req.body;
   const newGroup = {
     id: Date.now(),
-    name: "Nuevo grupo",
+    name: `Nuevo grupo (${
+      groups.filter((e) => e.name.includes("Nuevo grupo")).length
+    })`,
     color: "white",
   };
   groups.push(newGroup);
