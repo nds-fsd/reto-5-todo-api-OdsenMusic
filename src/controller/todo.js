@@ -19,15 +19,21 @@ function getAllTasks(req, res) {
 }
 
 function createTask(req, res) {
+  const { color, group } = req.body;
+
+  const taskColor = color || "white";
+  const taskGroup = group || "none";
+
   const newTask = {
     id: Date.now(),
     text: "",
     date: new Date(),
     done: false,
-    group: "none",
-    color: "white",
+    group: taskGroup,
+    color: taskColor,
     deleted: false,
   };
+
   tasks.push(newTask);
   res.status(201).json(newTask);
 }
