@@ -21,11 +21,19 @@ function getAllGroups(req, res) {
 
 function createGroup(req, res) {
   const body = req.body;
+  let name = "";
+
+  if (groups.filter((e) => e.name.includes("Nuevo grupo")).length !== 0) {
+    name =
+      "Nuevo grupo (" +
+      groups.filter((e) => e.name.includes("Nuevo grupo")).length +
+      ")";
+  } else {
+    name = "Nuevo grupo";
+  }
   const newGroup = {
     id: Date.now(),
-    name: `Nuevo grupo (${
-      groups.filter((e) => e.name.includes("Nuevo grupo")).length
-    })`,
+    name: name,
     color: "white",
   };
   groups.push(newGroup);
@@ -41,8 +49,6 @@ function getGroup(req, res) {
     res.status(404).send();
   }
 }
-
-function updateTaskGroupName() {}
 
 function updateGroup(req, res) {
   let group = findGroup(req);
