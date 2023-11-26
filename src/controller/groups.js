@@ -73,6 +73,7 @@ function deleteGroup(req, res) {
     res.status(404).send();
   } else {
     tasks.forEach((task) => {
+      //si un grupo es eliminado, se cambian el nombre del grupo de todas las tareas que lo tuviesen.
       if (task.group === group.name) {
         task.group = "none";
       }

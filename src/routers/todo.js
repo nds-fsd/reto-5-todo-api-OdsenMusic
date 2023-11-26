@@ -1,5 +1,4 @@
 const express = require("express");
-const { tasks } = require("../data/index");
 const {
   getAllTasks,
   createTask,

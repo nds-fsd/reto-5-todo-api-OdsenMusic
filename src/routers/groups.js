@@ -1,5 +1,4 @@
 const express = require("express");
-const { groups } = require("../data/groups");
 const {
   getAllGroups,
   createGroup,
