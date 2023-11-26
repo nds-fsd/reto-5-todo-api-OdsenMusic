@@ -20,7 +20,6 @@ function getAllGroups(req, res) {
 }
 
 function createGroup(req, res) {
-  const body = req.body;
   let name = "";
 
   if (groups.filter((e) => e.name.includes("Nuevo grupo")).length !== 0) {
@@ -73,7 +72,7 @@ function deleteGroup(req, res) {
     res.status(404).send();
   } else {
     tasks.forEach((task) => {
-      //si un grupo es eliminado, se cambian el nombre del grupo de todas las tareas que lo tuviesen.
+      //si un grupo es eliminado, se cambia el nombre del grupo de todas las que estaban en el grupo.
       if (task.group === group.name) {
         task.group = "none";
       }
