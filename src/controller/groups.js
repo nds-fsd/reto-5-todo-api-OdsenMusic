@@ -22,13 +22,11 @@ function getAllGroups(req, res) {
 function createGroup(req, res) {
   let name = "";
 
-  if (groups.filter((e) => e.name.includes("Nuevo grupo")).length !== 0) {
+  if (groups.filter((e) => e.name.includes("Grupo")).length !== 0) {
     name =
-      "Nuevo grupo (" +
-      groups.filter((e) => e.name.includes("Nuevo grupo")).length +
-      ")";
+      "Grupo (" + groups.filter((e) => e.name.includes("Grupo")).length + ")";
   } else {
-    name = "Nuevo grupo";
+    name = "Grupo";
   }
   const newGroup = {
     id: Date.now(),
@@ -52,6 +50,7 @@ function getGroup(req, res) {
 function updateGroup(req, res) {
   let group = findGroup(req);
   if (group) {
+    //Si se cambia el nombre a un grupo. Automaticamente se cambia el nombre del grupo a las tareas.
     tasks.forEach((task) => {
       if (task.group === group.name && req.body.name) {
         task.group = req.body.name;
