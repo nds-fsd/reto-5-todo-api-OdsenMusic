@@ -1,16 +1,65 @@
-exports.todos = [{
-  id: 0,
-  text: "Hacer la cama",
-  fecha: new Date("2022-05-21"),
-  done: false
-},
-{ 
-  id: 1,
-  text: "Ir al super",
-  fecha: new Date("2022-05-14"),
-  done: true
-}];
-
-
-
-
+exports.tasks = [
+  {
+    id: 1,
+    text: "Hacer la cama",
+    date: new Date("2022-05-21"),
+    done: false,
+    group: "Vida",
+    color: "yellow",
+    deleted: false,
+  },
+  {
+    id: 2,
+    text: "Ir al super",
+    date: new Date("2022-05-14"),
+    done: false,
+    group: "Vida",
+    color: "yellow",
+    deleted: false,
+  },
+  {
+    id: 3,
+    text: "Fregar los platos",
+    date: new Date("2022-05-14"),
+    done: false,
+    group: "Vida",
+    color: "yellow",
+    deleted: false,
+  },
+  {
+    id: 4,
+    text: "Aprender C++",
+    date: new Date("2022-05-14"),
+    done: false,
+    group: "Programación",
+    color: "blue",
+    deleted: false,
+  },
+  {
+    id: 5,
+    text: "Aprender Python",
+    date: new Date("2022-05-14"),
+    done: false,
+    group: "Programación",
+    color: "blue",
+    deleted: false,
+  },
+  {
+    id: 6,
+    text: "Programar trabajo",
+    date: new Date("2022-05-14"),
+    done: false,
+    group: "Trabajo",
+    color: "orange",
+    deleted: false,
+  },
+  {
+    id: 7,
+    text: "Preparar workshop",
+    date: new Date("2022-05-14"),
+    done: false,
+    group: "Trabajo",
+    color: "orange",
+    deleted: false,
+  },
+];
